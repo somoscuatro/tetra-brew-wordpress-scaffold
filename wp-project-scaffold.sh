@@ -2,7 +2,7 @@
 
 # Check for flags
 if [[ "$1" == "--version" ]]; then
-    echo "wp-project-scaffold v1.1.0"
+    echo "wp-project-scaffold v1.1.1"
     exit 0
 fi
 
@@ -192,23 +192,23 @@ if [[ $INSTALL_THEME =~ ^[Yy]$ ]]; then
     mkdir -p wp-content/themes
     cd wp-content/themes
 
-    run_cmd git clone git@github.com:somoscuatro/sc-starter-theme.git sc-starter-theme
+    run_cmd git clone git@github.com:somoscuatro/tetra-starter-wordpress-theme.git tetra-starter-wordpress-theme
 
     if [ $? -ne 0 ]; then
-        echo "☠️ Failed to clone the sc-starter-theme repository. Please check for errors and try again."
+        echo "☠️ Failed to clone the tetra-starter-wordpress-theme repository. Please check for errors and try again."
         exit 1
     fi
 
-    cd sc-starter-theme
+    cd tetra-starter-wordpress-theme
 
-    echo "🚧 Installing sc-starter-theme dependencies. This might take a while..."
+    echo "🚧 Installing tetra-starter-wordpress-theme dependencies. This might take a while..."
     echo
-    run_cmd docker-compose run --rm wp composer install --working-dir=wp-content/themes/sc-starter-theme
-    run_cmd docker-compose run --rm wp pnpm --dir=wp-content/themes/sc-starter-theme install
-    run_cmd docker-compose run --rm wp pnpm --dir=wp-content/themes/sc-starter-theme run build
+    run_cmd docker-compose run --rm wp composer install --working-dir=wp-content/themes/tetra-starter-wordpress-theme
+    run_cmd docker-compose run --rm wp pnpm --dir=wp-content/themes/tetra-starter-wordpress-theme install
+    run_cmd docker-compose run --rm wp pnpm --dir=wp-content/themes/tetra-starter-wordpress-theme run build
 
     if [ $? -ne 0 ]; then
-        echo "☠️ Failed to install and build the sc-starter-theme. Please check for errors and try again."
+        echo "☠️ Failed to install and build the tetra-starter-wordpress-theme. Please check for errors and try again."
         exit 1
     fi
 
@@ -221,12 +221,12 @@ if [[ $INSTALL_THEME =~ ^[Yy]$ ]]; then
 
     cd ../../../
     run_cmd git add .
-    run_cmd git commit -m "feat: add theme sc-starter-theme"
+    run_cmd git commit -m "feat: add theme tetra-starter-wordpress-theme"
 
-    run_cmd docker-compose run --rm cli theme activate sc-starter-theme
+    run_cmd docker-compose run --rm cli theme activate tetra-starter-wordpress-theme
 else
     echo
-    echo "🦘 Skipping the installation of the sc-starter-theme."
+    echo "🦘 Skipping the installation of the tetra-starter-wordpress-theme."
 fi
 
 echo

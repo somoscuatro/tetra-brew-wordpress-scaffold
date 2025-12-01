@@ -33,7 +33,7 @@ To install the WordPress Project Scaffold, follow these steps:
 2. Install the wp-project-scaffold tool via Homebrew:
 
     ```shell
-      brew install wp-project-scaffold`
+      brew install wp-project-scaffold
     ```
 
 ## Usage
@@ -46,11 +46,10 @@ wp-project-scaffold
 
 Running this command will:
 
-Set up a local WordPress development environment using the [somoscuatro Docker
-Compose configuration](https://github.com/somoscuatro/docker-wordpress-local).
+Set up a local WordPress development environment using our [Docker
+WordPress Local](https://github.com/somoscuatro/tetra-docker-wordpress) configuration, based on [Docker Compose](https://docs.docker.com/compose).
 
-Optionally, install the [somoscuatro WordPress Starter
-Theme](https://github.com/somoscuatro/sc-starter-theme) to jumpstart your theme
+Optionally, install our [TetraStarter WordPress Theme](https://github.com/somoscuatro/tetra-starter-wordpress-theme) to jumpstart your theme
 development. For more detailed information and advanced usage, please refer to
 the respective GitHub repositories linked above.
 
