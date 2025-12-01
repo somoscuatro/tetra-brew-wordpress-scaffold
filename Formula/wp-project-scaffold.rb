@@ -2,7 +2,7 @@ class WpProjectScaffold < Formula
   desc "Scaffolds a WordPress project using Docker and optionally a starter theme"
   homepage "https://github.com/somoscuatro/tetra-brew-wordpress-scaffold"
   url "https://github.com/somoscuatro/tetra-brew-wordpress-scaffold/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "bb6de180f87e81c03415390a61ffd8de8041c606cfaea01bb967bd4aaca33e95"
+  sha256 "3618c13f19629ecc43ce7668da7980b1e18c7df9138bc7961e1a4ffc37507c12"
   license "MIT"
 
   def install
