@@ -154,7 +154,7 @@ done
 # Install dependencies
 echo "🚧 Installing dependencies. This might take a while..."
     run_cmd docker-compose run --rm wp composer install
-    run_cmd docker-compose run --rm wp pnpm install
+    run_cmd docker-compose run --rm wp bun install
 echo
 
 # Create project repo and make initial commit
@@ -204,8 +204,8 @@ if [[ $INSTALL_THEME =~ ^[Yy]$ ]]; then
     echo "🚧 Installing tetra-starter-wordpress-theme dependencies. This might take a while..."
     echo
     run_cmd docker-compose run --rm wp composer install --working-dir=wp-content/themes/tetra-starter-wordpress-theme
-    run_cmd docker-compose run --rm wp pnpm --dir=wp-content/themes/tetra-starter-wordpress-theme install
-    run_cmd docker-compose run --rm wp pnpm --dir=wp-content/themes/tetra-starter-wordpress-theme run build
+    run_cmd docker-compose run --rm wp bun install --cwd=wp-content/themes/tetra-starter-wordpress-theme
+    run_cmd docker-compose run --rm wp bun --cwd=wp-content/themes/tetra-starter-wordpress-theme run build
 
     if [ $? -ne 0 ]; then
         echo "☠️ Failed to install and build the tetra-starter-wordpress-theme. Please check for errors and try again."
