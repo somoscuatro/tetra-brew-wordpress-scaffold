@@ -215,7 +215,7 @@ if [[ $INSTALL_THEME =~ ^[Yy]$ ]]; then
     run_cmd rm -rf .git
 
     run_cmd rm -rf .github .husky .vscode patches .editorconfig .env.example
-    rum_cmd rm -rf .eslintrc.json .gitignore .prettierignore .stylelintrc
+    run_cmd rm -rf .eslintrc.json .gitignore .prettierignore .stylelintrc
     run_cmd rm -rf CODE_OF_CONDUCT.md commitlint.config.json LICENSE.md
     run_cmd rm -rf phpcs.xml phpstand.neon.dist README.md SECURITY.md
 
