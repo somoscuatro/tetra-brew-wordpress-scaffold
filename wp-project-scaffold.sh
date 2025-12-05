@@ -103,22 +103,22 @@ cd "$SAFE_PROJECT_NAME"
 mv .env.sample .env
 sed -i.bak "s|your-project|$SAFE_PROJECT_NAME|g" .env && rm -f .env.bak
 
-# Clone the wp-project-default-settings repository
+# Clone the tetra-settings-wordpress-scaffold repository
 echo "🚧 Adding default WordPress settings..."
 echo
-run_cmd git clone git@github.com:somoscuatro/wp-project-default-settings.git wp-project-default-settings-temp
+run_cmd git clone git@github.com:somoscuatro/tetra-settings-wordpress-scaffold.git tetra-settings-wordpress-scaffold-temp
 
-if [ ! -d "wp-project-default-settings-temp" ]; then
-    echo "☠️ Failed to clone the wp-project-default-settings repository. Please check the URL and try again."
+if [ ! -d "tetra-settings-wordpress-scaffold-temp" ]; then
+    echo "☠️ Failed to clone the tetra-settings-wordpress-scaffold repository. Please check the URL and try again."
     exit 1
 fi
 
-run_cmd cp -r wp-project-default-settings-temp/common/. .
+run_cmd cp -r tetra-settings-wordpress-scaffold-temp/common/. .
 
 if [[ $INSTALL_THEME =~ ^[Yy]$ ]]; then
-    run_cmd cp -r wp-project-default-settings-temp/with-starter-theme/. .
+    run_cmd cp -r tetra-settings-wordpress-scaffold-temp/with-starter-theme/. .
 else
-    run_cmd cp -r wp-project-default-settings-temp/without-starter-theme/. .
+    run_cmd cp -r tetra-settings-wordpress-scaffold-temp/without-starter-theme/. .
 fi
 
 sed -i.bak -e "s|your-project|$SAFE_PROJECT_NAME|g" \
@@ -130,7 +130,7 @@ sed -i.bak -e "s|your-project|$SAFE_PROJECT_NAME|g" \
            .gitignore composer.json package.json phpstan.neon.dist
 run_cmd rm -f .gitignore.bak composer.json.bak package.json.bak phpstan.neon.dist.bak
 
-run_cmd rm -rf wp-project-default-settings-temp
+run_cmd rm -rf tetra-settings-wordpress-scaffold-temp
 
 # Prepare SSL certificates
 mkdir -p .docker/certs
